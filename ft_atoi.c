@@ -6,13 +6,13 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:47:38 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/20 22:00:39 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/22 15:22:04 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //cette fonction détermine si le caractère c est non affichable ou non 
-int	ft_iswspc(int c)
+static int	ft_iswspc(int c)
 {
 	if ((c >= 9 && c <= 13) || c == 32)
 	{
@@ -21,12 +21,23 @@ int	ft_iswspc(int c)
 	return (0);
 }
 
+// this function solve the problem of overflowing 
+static int	to_int(unsigned long long x, int sign)
+{
+	if (x >= 9223372036854775807 && sign == 1)
+		return (-1);
+	else if (x > 9223372036854775807 && sign == -1)
+		return (0);
+	else
+		return ((int)x);
+}
+
 // cette fonction convertie un nombre contenu dans nptr en sa base décimale
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	res;
-	int	sign;
+	int					i;
+	unsigned long long	res;
+	int					sign;
 
 	i = 0;
 	res = 0;
@@ -45,5 +56,5 @@ int	ft_atoi(const char *nptr)
 		res += nptr[i] - 48;
 		i++;
 	}
-	return (res * sign);
+	return (to_int(res, sign) * sign);
 }
