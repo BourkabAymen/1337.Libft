@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:00:35 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/22 03:15:32 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/22 14:14:58 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ static char	*ft_word(char const *s, char c)
 
 	i = 0;
 	len_word = 0;
-	while (s[len_word] && !check_sep(s[len_word], c))
-		len_word++;
 	word = (char *)malloc(sizeof(char) * (len_word + 1));
 	if (!word)
 		return (NULL);
