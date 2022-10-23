@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:02:25 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/16 18:56:41 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 05:25:29 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ size_t	ft_strlcat(char *s1, const char *s2, size_t size)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 && size == 0)
+		return (ft_strlen(s2));
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
 	i = 0;

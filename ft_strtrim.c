@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:11:53 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/20 06:38:01 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 05:48:19 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char
 	size_t	start;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	while (s1[start] && ft_char_in_set(s1[start], set))
 		start++;

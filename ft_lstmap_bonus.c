@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:55:39 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/21 23:38:36 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 08:24:48 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&new, temp);
-	lst = lst -> next;
+		lst = lst -> next;
 	}
 	return (new);
 }

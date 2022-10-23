@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:02:09 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/19 00:46:37 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 05:36:56 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		total_len;
 	char	*str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	total_len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	str = (char *)malloc(total_len * sizeof(char));
 	if (!str)

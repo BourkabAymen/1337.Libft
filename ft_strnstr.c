@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:11:18 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/19 00:12:04 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 03:33:01 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	j;
 
 	i = 0;
+	if (!haystack && n == 0)
+		return (NULL);
 	if (*needle == '\0')
 		return ((char *)haystack);
 	j = ft_strlen(needle);

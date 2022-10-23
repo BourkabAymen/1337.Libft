@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 13:44:17 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/22 04:31:29 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 06:38:23 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,16 +119,16 @@
 // }
 
 
-// fonction ft_lstadd_front
-int main()
-{
-    t_list   *lst1 = ft_lstnew("Aymen");
-    printf("%s\n", lst1 -> content);
-    t_list	*lst2 = ft_lstnew("Bourkab");
-    ft_lstadd_front(&lst1, lst2);
-    printf("%s\n", lst1 -> content);
-    printf("%s\n", lst1 -> next -> content);
-}
+// // fonction ft_lstadd_front
+// int main()
+// {
+//     t_list   *lst1 = ft_lstnew("Aymen");
+//     printf("%s\n", lst1 -> content);
+//     t_list	*lst2 = ft_lstnew("Bourkab");
+//     ft_lstadd_front(&lst1, lst2);
+//     printf("%s\n", lst1 -> content);
+//     printf("%s\n", lst1 -> next -> content);
+// }
 
 // // fonction ft_lstclear
 // void	del(void *content)
@@ -236,6 +236,16 @@ int main()
 //     printf("%s\n", p);
 // }
 
+// int main(void)
+// {
+//     int src[] = {1,300,0,8,95,5,580,81000};
+
+//     printf("%p\n", &src[0]);
+//     printf("%p\n", &src[1]);
+//     printf("%p\n", &src[2]);
+//     int *ptr = ft_memchr(src,0,4);
+//     printf("%p\n", ptr);
+// }
 
 // fonction ft_memcmp
 // int main()
@@ -246,12 +256,26 @@ int main()
 //     printf("%d\n", p);
 // }
 
+// int main(void)
+// {
+//     int src[] = {300,20,10,301,50,80};
+
+//     printf("-> %p\n", &src[0]);
+//     printf("-> %p\n", &src[1]);
+//     printf("-> %p\n", &src[2]);
+//     printf("-> %p\n", &src[3]);
+//     int ptr = ft_memcmp(src,src+3,1);
+//     printf("%d\n", ptr);
+// }
+
 // // fonction ft_memcpy
 // int main()
 // {
-// 	char dest[100] = "jgfrr";
-// 	void	*p = ft_memcpy(dest, "aymen", 5);
-//     printf("%s\n", p);
+// 	// char dest[100] = "jgfrr";
+//     int tab1[] = {1,300,50,7,8};
+//     int tab2[] = {50,51,300};
+// 	memcpy(tab1, tab2, 9);
+//     printf("%d\n", tab1[2]);
 // }
 
 // // fonction ft_memmove
@@ -379,21 +403,20 @@ int main()
 
 
 // // fonction ft_strjoin
+// #include <string.h>
 // int main()
 // {
-//     char const s1[] = "aymen_";
-//     char const s2[] = "BOURKAB";
-//     printf("%s\n", ft_strjoin(s1, s2));
+//     // char const s1[] = "aymen_";
+//     // char const s2[] = "BOURKAB";
+//     printf("%d\n", strjoin(NULL, NULL));
 // }
 
 
 // // fonction ft_strlcat
 // int main()
 // {
-//     char s1[] = "aymen_";
 //     const char s2[] = "BOURKAB";
-// 	ft_strlcat(s1, s2, 14);
-//     printf("%s\n", s1);
+//     printf("%zu\n", ft_strlcat(NULL, s2, 0));
 // }
 
 // // fonction ft_strlcpy
@@ -409,8 +432,8 @@ int main()
 // // fonction ft_strlen
 // int main()
 // {
+//     const char *a = NULL;
 //     const char *a = "";
-
 //     printf("%zu\n", ft_strlen(a));
 // }
 
@@ -437,12 +460,12 @@ int main()
 //     printf("%d\n", ft_strncmp(haystack, needle, 7));
 // }
 
-// fonction ft_strnstr
+// // fonction ft_strnstr
 // int main()
 // {
-//     char const *haystack = "aymen_BOURKAB";
+//     // char const *haystack = "aymen_BOURKAB";
 //     char const *needle = "aymen";
-//     printf("%s\n", ft_strnstr(haystack, needle, 13));
+//     printf("%s\n", ft_strnstr(NULL, needle, 0));
 // }
 
 // // fonction ft_strrchr

@@ -6,70 +6,14 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:00:35 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/22 15:29:32 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 08:14:47 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// cette fonction vérifie si c == a ou non
-static int	check_sep(char a, char c)
-{
-	if (c == a)
-		return (1);
-	return (0);
-}
-
-// cette fonction compte le nombre des sous chaines existantes dans s et qui
-// sont séparées au sein de s par c soit à droite soit à gauche soit les deux
-static int	count_strings_in_str(char const *s, char c)
-{
-	int	i;
-	int	count;
-
-	count = 0;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		while (s[i] != '\0' && check_sep(s[i], c))
-			i++;
-		if (s[i] != '\0')
-			count++;
-		while (s[i] != '\0' && !check_sep(s[i], c))
-			i++;
-	}
-	return (count);
-}
-
-// cette fonction determine l'indice où
-// il faut 
-// s'arreter pour pouvoir retirer la sous chaine de caractère (word) 
-// juste avant
-// le séparateur
-static char	*ft_word(char const *s, char c)
-{
-	int		len_word;
-	int		i;
-	char	*word;
-
-	i = 0;
-	len_word = 0;
-	while (s[len_word] && !check_sep(s[len_word], c))
-		len_word++;
-	word = (char *)malloc(sizeof(char) * (len_word + 1));
-	if (!word)
-		return (NULL);
-	while (i < len_word)
-	{
-		word[i] = (char)s[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
-}
-
-// On remedie au probleme d'allocation de la memoire
-static char	**memory_err(char **strs)
+// Handles substring memory allocation errors
+static char	**catch_err(char **strs)
 {
 	int	i;
 
@@ -80,32 +24,77 @@ static char	**memory_err(char **strs)
 	return (NULL);
 }
 
-// cette fonction retourne an array de sous chaines de caractères de s 
-// séparées par c dans s
-char	**ft_split(char const *s, char c)
+// Counts the number of strings that will be added to the array
+static int	ft_wdcount(const char *s, char c)
 {
-	char	**strings;
-	int		i;
+	int	i;
+	int	count;
 
 	i = 0;
-	strings = (char **)malloc(sizeof(char *)
-			*(count_strings_in_str(s, c) + 1));
-	if (!strings)
-		return (NULL);
-	while (*s != '\0')
+	count = 0;
+	while (s[i])
 	{
-		while (*s != '\0' && check_sep(*s, c))
-			s++;
-		if (*s != '\0')
-		{
-			strings[i] = ft_word(s, c);
-			if (!strings[i])
-				return (memory_err(strings));
+		if (s[i] == c)
 			i++;
+		else
+		{
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		while (*s && !check_sep(*s, c))
-			s++;
 	}
-	strings[i] = 0;
-	return (strings);
+	return (count);
+}
+
+// Duplicates a substring
+static char	*ft_strxdup(char const *s, char c, int *x)
+{
+	char	*str;
+	int		i;
+	int		len;
+
+	len = 0;
+	while (s[*x] == c)
+		(*x)++;
+	i = *x;
+	while (s[i] && s[i] != c)
+	{
+		len++;
+		i++;
+	}
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (s[*x] && s[*x] != c)
+		str[i++] = s[(*x)++];
+	str[i] = '\0';
+	return (str);
+}
+
+// Splits a string into an array of strings
+char	**ft_split(char const *s, char c)
+{
+	char	**strs;
+	int		i;
+	int		x;
+	int		len;
+
+	if (!s)
+		return (NULL);
+	len = ft_wdcount(s, c);
+	strs = (char **)malloc((len + 1) * sizeof(char *));
+	if (!strs)
+		return (NULL);
+	i = 0;
+	x = 0;
+	while (i < len)
+	{
+		strs[i] = ft_strxdup(s, c, &x);
+		if (!strs[i])
+			return (catch_err(strs));
+		i++;
+	}
+	strs[i] = 0;
+	return (strs);
 }

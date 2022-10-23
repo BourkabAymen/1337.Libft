@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:53:47 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/22 02:40:30 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 05:29:44 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!*lst)
-		return ;
 	while (lst && *lst)
 	{
 		temp = (*lst)-> next;
