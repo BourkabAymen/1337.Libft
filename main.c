@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 13:44:17 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/23 06:38:23 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/25 03:35:35 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@
 // // fonction ft_calloc (Pour tester qu'elle reserve de la memoire, il faut changer la fonction bzero)
 // int main()
 // {
-// 		void * p = ft_calloc(2, 2);
+//         void * p = ft_calloc(2, 2);
 //     printf("%s\n", p);
 // }
 
 
 
-// // fonction isalnum 
+// // fonction isalnum
 // int main()
 // {
 //     char a = 'b';
@@ -103,19 +103,22 @@
 // // fonction ft_itoa
 // int main()
 // {
-// 	char	*p = ft_itoa(755);
+//     char    *p = ft_itoa(755);
 //     printf("%s\n", p);
 // }
 
 // // fonction ft_lstadd_back
 // int main()
 // {
-//     t_list	*lst1 = ft_lstnew("Aymen");
-//     printf("%s\n", lst1 -> content);
-//     t_list	*lst2 = ft_lstnew("Bourkab");
+//     t_list    *lst1 = ft_lstnew("Aymen");
+//     t_list    *lst2 = ft_lstnew("Bourkab");
 //     ft_lstadd_back(&lst1, lst2);
+//     t_list    *lst3 = ft_lstnew("bilal 9ouwad");
+//     ft_lstadd_back(&lst1, lst3);
 //     printf("%s\n", lst1 -> content);
 //     printf("%s\n", lst1 -> next -> content);
+//     printf("%s\n", lst1 -> next -> next -> content);
+      
 // }
 
 
@@ -124,23 +127,23 @@
 // {
 //     t_list   *lst1 = ft_lstnew("Aymen");
 //     printf("%s\n", lst1 -> content);
-//     t_list	*lst2 = ft_lstnew("Bourkab");
+//     t_list    *lst2 = ft_lstnew("Bourkab");
 //     ft_lstadd_front(&lst1, lst2);
 //     printf("%s\n", lst1 -> content);
 //     printf("%s\n", lst1 -> next -> content);
 // }
 
 // // fonction ft_lstclear
-// void	del(void *content)
+// void    del(void *content)
 // {
 //     free(content);
 // }
 
 // int main()
 // {
-//     t_list	*lst1 = ft_lstnew(ft_strdup("Aymen"));
-//     t_list	*lst2 = ft_lstnew(ft_strdup("Bourkab"));
-//     t_list	*lst3 = ft_lstnew(ft_strdup("Zamel"));
+//     t_list    *lst1 = ft_lstnew(ft_strdup("Aymen"));
+//     t_list    *lst2 = ft_lstnew(ft_strdup("Bourkab"));
+//     t_list    *lst3 = ft_lstnew(ft_strdup("Zamel"));
 //     ft_lstadd_back(&lst1, lst2); // lst1 -> next -> lst2 -> NULL
 //     ft_lstadd_back(&lst1, lst3); // lst1 -> next -> lst2 -> next -> lst3 -> NUL
 //     ft_lstclear(&lst1, del);
@@ -148,21 +151,21 @@
 // }
 
 // // fonction ft_lstdelone
-// void	del(void *content)
+// void    del(void *content)
 // {
 //     free(content);
 // }
 
 // int main()
 // {
-//     t_list	*lst1 = ft_lstnew(ft_strdup("Aymen"));
-//     t_list	*lst2 = ft_lstnew(ft_strdup("Bourkab"));
-//     t_list	*lst3 = ft_lstnew(ft_strdup("Zamel"));
+//     t_list    *lst1 = ft_lstnew(ft_strdup("Aymen"));
+//     t_list    *lst2 = ft_lstnew(ft_strdup("Bourkab"));
+//     t_list    *lst3 = ft_lstnew(ft_strdup("Zamel"));
 //     ft_lstadd_back(&lst1, lst2); // lst1 -> next -> lst2 -> NULL
 //     ft_lstadd_back(&lst1, lst3); // lst1 -> next -> lst2 -> next -> lst3 -> NUL
 //     printf("%s\n", lst1 -> content ); // lst2 -> next -> lst3
-// 	ft_lstdelone(lst1, &del); // lst1 -> content == NULL || lst2 -> next -> lst3 
-//     printf("%s\n", lst1 -> content ); 
+//     ft_lstdelone(lst1, &del); // lst1 -> content == NULL || lst2 -> next -> lst3
+//     printf("%s\n", lst1 -> content );
 //     printf("%s\n", lst1 -> next -> content );
 //     printf("%s\n", lst1 -> next -> next -> content );
 // }
@@ -176,8 +179,8 @@
 
 // int main()
 // {
-//     t_list	*lst1 = ft_lstnew("Aymen");
-//     t_list	*lst2 = ft_lstnew("Bourkab");
+//     t_list    *lst1 = ft_lstnew("Aymen");
+//     t_list    *lst2 = ft_lstnew("Bourkab");
 //     ft_lstadd_front(&lst1, lst2);
 //     ft_lstiter(lst1, &f);
 // }
@@ -185,11 +188,11 @@
 // // fonction ft_lstlast
 // int main()
 // {
-//     t_list	*lst1 = ft_lstnew("Aymen");
-//     t_list	*lst2 = ft_lstnew("Bourkab");
+//     t_list    *lst1 = ft_lstnew("Aymen");
+//     t_list    *lst2 = ft_lstnew("Bourkab");
 //     ft_lstadd_front(&lst1, lst2);
-//     printf("%p\n", lst1 ); 
-//     printf("%p\n", ft_lstlast(lst1) ); 
+//     printf("%p\n", lst1 );
+//     printf("%p\n", ft_lstlast(lst1) );
 // }
 
 
@@ -202,11 +205,11 @@
 
 // int main()
 // {
-//     t_list	*lst1 = ft_lstnew("Aymen");
-//     t_list	*lst2 = ft_lstnew("Bourkab");
+//     t_list    *lst1 = ft_lstnew("Aymen");
+//     t_list    *lst2 = ft_lstnew("Bourkab");
 //     ft_lstadd_front(&lst1, lst2);
-//     t_list	*lst3 = ft_lstmap(lst1, &f, free);
-//     printf("%s\n", lst3 -> content ); 
+//     t_list    *lst3 = ft_lstmap(lst1, &f, free);
+//     printf("%s\n", lst3 -> content );
 //     printf("%s\n", lst3 -> next -> content );
 // }
 
@@ -214,7 +217,7 @@
 // // fonction ft_lstnew
 // int main()
 // {
-//     t_list	*lst = ft_lstnew("hhhhh");
+//     t_list    *lst = ft_lstnew("hhhhh");
 //     printf("%s\n", lst -> content);
 //     printf("%zu\n", ft_lstsize(lst));
 // }
@@ -223,7 +226,7 @@
 // // fonction ft_lstsize
 // int main()
 // {
-//     t_list	*lst = ft_lstnew("hhhhh");
+//     t_list    *lst = ft_lstnew("hhhhh");
 //     printf("%zu\n", ft_lstsize(lst));
 // }
 
@@ -231,8 +234,8 @@
 // // fonction ft_memchr
 // int main()
 // {
-// 	const void *s = "abzy";
-// 	void * p = ft_memchr(s, 'z', 10);
+//     const void *s = "abzy";
+//     void * p = ft_memchr(s, 'z', 10);
 //     printf("%s\n", p);
 // }
 
@@ -250,9 +253,9 @@
 // fonction ft_memcmp
 // int main()
 // {
-// 	const void *s1 = "abzy";
-// 	const void *s2 = "abzy22";
-// 	int p = ft_memcmp(s1, s2, 4);
+//     const void *s1 = "abzy";
+//     const void *s2 = "abzy22";
+//     int p = ft_memcmp(s1, s2, 4);
 //     printf("%d\n", p);
 // }
 
@@ -271,17 +274,17 @@
 // // fonction ft_memcpy
 // int main()
 // {
-// 	// char dest[100] = "jgfrr";
+//     // char dest[100] = "jgfrr";
 //     int tab1[] = {1,300,50,7,8};
 //     int tab2[] = {50,51,300};
-// 	memcpy(tab1, tab2, 9);
+//     memcpy(tab1, tab2, 9);
 //     printf("%d\n", tab1[2]);
 // }
 
 // // fonction ft_memmove
 // int main()
 // {
-// 	char src[] = "aaaaabbbbb";
+//     char src[] = "aaaaabbbbb";
     
 //     // |a|a|a|a|a|b|b|b|b|b|"
 //     //            i
@@ -362,7 +365,7 @@
 // {
 //     int        i;
 //     char    **split;
-//     char *s = "      split       this for   me  !       ";  
+//     char *s = "      split       this for   me  !       ";
 //     // split = ft_split("agvhbjkagbhjnkmlabhnjkma", 'a');
 //     split = ft_split(s, ' ');
 //     i = 0;
@@ -393,12 +396,12 @@
 // // fonction ft_striteri
 // void (f)(unsigned int i, char *c)
 // {
-// 	printf("L'element d'indice %d est %c \n", i, c[0]);
+//     printf("L'element d'indice %d est %c \n", i, c[0]);
 // }
 // int main()
 // {
 //     char s[] = "1235";
-// 	ft_striteri(s, &f);
+//     ft_striteri(s, &f);
 // }
 
 
@@ -441,13 +444,13 @@
 // // fonction ft_strmapi
 // char f(unsigned int i, char c)
 // {
-// 	return(c + i);
+//     return(c + i);
 // }
 
 // int main()
 // {
 //     char s[] = "1235";
-// 	printf("%s", ft_strmapi(s, &f));
+//     printf("%s", ft_strmapi(s, &f));
 // }
 
 
@@ -512,3 +515,4 @@
 //     printf("%d\n", ft_toupper(b));
 //     printf("%d\n", ft_toupper(c));
 // }
+

@@ -6,7 +6,7 @@
 /*   By: abourkab <abourkab@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:00:35 by abourkab          #+#    #+#             */
-/*   Updated: 2022/10/23 08:14:47 by abourkab         ###   ########.fr       */
+/*   Updated: 2022/10/23 16:09:42 by abourkab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static char	**catch_err(char **strs)
 }
 
 // Counts the number of strings that will be added to the array
+// with checking the occurence of the character c in s
 static int	ft_wdcount(const char *s, char c)
 {
 	int	i;
